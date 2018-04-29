@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=10.0, user-scalable=yes">
+<title>INVADERdrawing</title>
+</head>
+<script src="INVADERdrawing.js"></script>
+<link rel="stylesheet" href="INVADERdrawing.css" type="text/css">
+<body>
+<form>
+UTC Date from <input type="date" step="1" onchange="check_fromDateTime(this.form)" id="from_date" value="2014-02-28">
+UTC Time from <input type="time" step="1" onchange="check_fromDateTime(this.form)" id="from_time" value="09:00:00">
+<br>
+UTC Date Time from <input type="datetime" step="1" id="from_utcDateTime" value="2014-02-28T09:00:00Z" readonly>
+<br>
+UnixTime from <input type="text" id="from_utime" value="1393513200" size="12" readonly>
+<br>
+
+UTC Date to <input type="date" step="1" onchange="check_toDateTime(this.form)" id="to_date" value="2014-03-01">
+UTC Time to <input type="time" step="1" onchange="check_toDateTime(this.form)" id="to_time" value="09:00:00">
+<br>
+UTC Date Time to <input type="datetime" step="1" id="to_utcDateTime" value="2014-03-01T09:00:00Z" readonly>
+<br>
+UnixTime to <input type="text" id="to_utime" value="1393664400" size="12" readonly>
+<br>
+Color is <input type="text" id="d_color" value="00aadd" size="8"> in hexadecimal
+<br>
+<button type="button" onclick="getInfo(this.form)">Get Data & Draw</button>
+<button type="button" onclick="clear_drawing(this.form)">Clear Drawing</button>
+<hr />
+<div id="status">Ready</div>
+</form>
+<canvas id="draw_area" width="320" height="240"></canvas>
+</body>
+</html>
